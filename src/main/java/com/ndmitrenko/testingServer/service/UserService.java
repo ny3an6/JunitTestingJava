@@ -35,5 +35,21 @@ public class UserService {
                throw new DefaultException(HttpStatus.NOT_FOUND, "No company founded");
            }
      }
+
+ /*   public User getUser2(Long companyId, String userName) {
+        Company company = companyRepository.findByCompanyId(companyId);
+        if (company != null) {
+            User user = null;
+                company.getUser().stream().filter()
+                if (userCandidate.getUsername().equals(userName)) {
+                    user = userRepository.findByUsername(userName);
+                    break;
+                } else throw new DefaultException(HttpStatus.NOT_FOUND, "User not found");
+            }
+            return user;
+        }else {
+            throw new DefaultException(HttpStatus.NOT_FOUND, "No company founded");
+        }
+    }*/
 }
 

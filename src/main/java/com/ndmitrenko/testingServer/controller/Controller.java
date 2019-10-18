@@ -3,7 +3,6 @@ package com.ndmitrenko.testingServer.controller;
 import com.ndmitrenko.testingServer.model.Company;
 import com.ndmitrenko.testingServer.model.User;
 import com.ndmitrenko.testingServer.repository.CompanyRepository;
-import com.ndmitrenko.testingServer.repository.UserRepository;
 import com.ndmitrenko.testingServer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
