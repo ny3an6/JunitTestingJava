@@ -1,4 +1,4 @@
-package com.ndmitrenko.testingServer.service;
+package com.ndmitrenko.testingServer;
 
 import com.ndmitrenko.testingServer.exception.DefaultException;
 import com.ndmitrenko.testingServer.model.Company;
