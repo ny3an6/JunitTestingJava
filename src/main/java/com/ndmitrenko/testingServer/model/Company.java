@@ -26,7 +26,7 @@ public class Company {
     @Column(name = "company_id")
     private Long companyId;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<User> user;
 }

@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 @Data
 @AllArgsConstructor
-public class DefaultResponse {
+public class DefaultExceptionResponse {
     private String message;
     private HttpStatus httpStatus;
 }
