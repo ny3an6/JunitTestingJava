@@ -3,7 +3,6 @@ package com.ndmitrenko.testingServer.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -12,7 +11,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-@ToString(exclude = "company")
 public class User {
 
     @Id

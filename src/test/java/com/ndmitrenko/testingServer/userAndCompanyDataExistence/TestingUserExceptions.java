@@ -1,5 +1,6 @@
 package com.ndmitrenko.testingServer.userAndCompanyDataExistence;
 
+import com.ndmitrenko.testingServer.exception.ApiResult;
 import com.ndmitrenko.testingServer.exception.DefaultException;
 import com.ndmitrenko.testingServer.repository.CompanyRepository;
 import com.ndmitrenko.testingServer.repository.UserRepository;
@@ -21,7 +22,7 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestingUserExist {
+public class TestingUserExceptions {
 
     private static final Long COMPANY_ID = 1136L;
 
@@ -30,18 +31,15 @@ public class TestingUserExist {
     @Autowired
     private UserService userService;
 
-    @MockBean
-    private UserRepository userRepository;
-
     @Test
     public void getUser() {
         try {
             userService.getUser(COMPANY_ID, INCORRECT_USER_NAME);
             Assert.fail("Expected DefaultException");
         } catch (DefaultException de) {
-            verify(userRepository, times(1)).findUserByCompany_CompanyIdAndUsername(anyLong(), anyString());
             Assert.assertEquals(de.getMessage(), "User not found");
             Assert.assertEquals(de.getCode(), HttpStatus.NOT_FOUND);
+            Assert.assertEquals(de.getApiResult(), ApiResult.FAIL);
         }
     }
 }
